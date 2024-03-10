@@ -5,7 +5,7 @@ import Items from "../Items/Items";
 
 const NewCollection = () => {
   return (
-    <Container className="mt-4">
+    <Container fluid className="mt-4">
       <Row>
         <div className="fs-3 fw-bolder" style={{ textAlign: "center" }}>
           NEW COLLECTIONS

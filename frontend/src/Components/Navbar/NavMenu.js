@@ -48,7 +48,7 @@ const Menu = () => {
                 setMenu("women");
               }}
             >
-              <Link to="/womens" style={{ textDecoration: "none" }}>
+              <Link to="/women" style={{ textDecoration: "none" }}>
                 Women
               </Link>
               {menu === "women" ? <hr /> : <></>}
@@ -58,20 +58,20 @@ const Menu = () => {
                 setMenu("man");
               }}
             >
-              <Link to="/mens" style={{ textDecoration: "none" }}>
+              <Link to="/men" style={{ textDecoration: "none" }}>
                 Men
               </Link>
               {menu === "man" ? <hr /> : <></>}
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                setMenu("kids");
+                setMenu("kid");
               }}
             >
-              <Link to="/kids" style={{ textDecoration: "none" }}>
+              <Link to="/kid" style={{ textDecoration: "none" }}>
                 Kids
               </Link>
-              {menu === "kids" ? <hr /> : <></>}
+              {menu === "kid" ? <hr /> : <></>}
             </Nav.Link>
           </Nav>
           <Nav>

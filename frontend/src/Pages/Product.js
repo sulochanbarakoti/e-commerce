@@ -15,14 +15,19 @@ const Product = () => {
       <Breadcurms product={product} />
       <Row>
         <Col>
-          <Col md={4}>
-            <Image src={product.image} />
-          </Col>
-          <Col md={8}>
-            <Image src={product.image} />
+          <Col className="text-center">
+            <Image src={product.image} style={{ width: "auto" }} />
           </Col>
         </Col>
-        <Col></Col>
+        <Col>
+          <div className="text-start fs-2 fw-semibold">{product.name}</div>
+          <div>
+            <span className="fs-4 me-1 text-danger text-decoration-line-through">
+              ${product.old_price}
+            </span>
+            <span className="fs-4 fw-semibold me-1">${product.new_price}</span>
+          </div>
+        </Col>
       </Row>
     </div>
   );

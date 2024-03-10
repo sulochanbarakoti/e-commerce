@@ -10,7 +10,7 @@ import Items from "../Items/Items";
 
 const Popular = () => {
   return (
-    <Container className="mt-4">
+    <Container fluid className="mt-4">
       <Row>
         <div className="fs-3 fw-bolder" style={{ textAlign: "center" }}>
           POPULAR IN WOMEN
