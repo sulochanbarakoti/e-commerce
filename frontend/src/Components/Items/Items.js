@@ -7,7 +7,10 @@ const Items = (props) => {
   return (
     <div>
       <Card style={{ width: "18rem" }} className="m-3">
-        <Link to={`/product?id=${props.product.id}`}>
+        <Link
+          to={`/product?id=${props.product.id}`}
+          onClick={window.scrollTo(0, 0)}
+        >
           <Card.Img variant="top" src={props.product.image} />
         </Link>
         <Card.Body>

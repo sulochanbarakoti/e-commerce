@@ -7,6 +7,7 @@ import {
   Button,
   Row,
   Col,
+  Badge,
 } from "react-bootstrap";
 import logo from "../Assets/logo.png";
 import cartIcon from "../Assets/cart_icon.png";
@@ -24,7 +25,7 @@ const Menu = () => {
       <Container>
         <Navbar.Brand href="/">
           <Row>
-            <Col className="text-end py-3">
+            <Col className="text-end">
               <Image src={logo} style={{ width: "auto" }} />
             </Col>
             <Col className="fs-3 fw-bold m-auto">New Shop</Col>
@@ -92,7 +93,9 @@ const Menu = () => {
                   style={{ height: "30px", width: "30px" }}
                 />
               </Link>
-              <div className="md-2 badge bg-danger">0</div>
+              <Badge bg="danger" pill>
+                0
+              </Badge>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

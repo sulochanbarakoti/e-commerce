@@ -19,7 +19,7 @@ const Popular = () => {
       <Row className="mt-3">
         {/* Map through the array of products and create a new component for each one */}
         {data_product.map((item, index) => (
-          <Col>
+          <Col key={index}>
             <Items product={item} />
           </Col>
         ))}

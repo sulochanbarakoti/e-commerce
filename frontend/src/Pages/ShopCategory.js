@@ -9,7 +9,7 @@ const ShopCategory = (props) => {
   return (
     <div>
       <Image src={props.banner} />
-      <Container>
+      <Container fluid>
         <Row className="mt-3">
           <Col>Showing 1-12 out of 36 products</Col>
           <Col className="text-end">Sort by</Col>

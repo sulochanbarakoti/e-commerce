@@ -1,10 +1,10 @@
 import React from "react";
-import { Breadcrumb } from "react-bootstrap";
+import { Breadcrumb, Container } from "react-bootstrap";
 
 const Breadcurms = (props) => {
   const { product } = props;
   return (
-    <div>
+    <Container className="py-3">
       <Breadcrumb>
         <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
         <Breadcrumb.Item href={`/${product.category}`}>
@@ -12,7 +12,7 @@ const Breadcurms = (props) => {
         </Breadcrumb.Item>
         <Breadcrumb.Item active>{product.name}</Breadcrumb.Item>
       </Breadcrumb>
-    </div>
+    </Container>
   );
 };
 
