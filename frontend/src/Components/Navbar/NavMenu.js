@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -12,8 +12,10 @@ import {
 import logo from "../Assets/logo.png";
 import cartIcon from "../Assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Menu = () => {
+  const { getTotalCart } = useContext(ShopContext);
   const [menu, setMenu] = useState(""); // default menu is home
   return (
     <Navbar
@@ -94,7 +96,7 @@ const Menu = () => {
                 />
               </Link>
               <Badge bg="danger" pill>
-                0
+                {getTotalCart()}
               </Badge>
             </Nav.Link>
           </Nav>
