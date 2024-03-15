@@ -16,7 +16,7 @@ import NotFound from "./Components/Assets/urlnotfound";
 function App() {
   return (
     <BrowserRouter>
-      <NavMenu />
+      {/* <NavMenu /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginSignup />} />
@@ -36,7 +36,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

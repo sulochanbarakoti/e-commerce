@@ -13,6 +13,8 @@ import {
   Tabs,
 } from "react-bootstrap";
 import RelatedProduct from "../Components/Related_Product/RelatedProduct";
+import NavMenu from "../Components/Navbar/NavMenu";
+import Footer from "../Components/Footer/Footer";
 
 const Product = () => {
   const location = useLocation();
@@ -22,6 +24,7 @@ const Product = () => {
   const product = all_product.find((e) => e.id === Number(productId));
   return (
     <div>
+      <NavMenu />
       <Breadcurms product={product} />
       <Row>
         <Col className="d-flex">
@@ -126,6 +129,7 @@ const Product = () => {
         </Tabs>
       </Row>
       <RelatedProduct />
+      <Footer />
     </div>
   );
 };
