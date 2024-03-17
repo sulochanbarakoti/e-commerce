@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Button, Stack } from "react-bootstrap";
 import { IoIosAddCircle } from "react-icons/io";
 
 const DashSide = () => {
+  const [activeComponent, setActiveComponent] = useState("addProduct");
+
   return (
     <div>
       <Row className="mb-3">
@@ -15,14 +17,25 @@ const DashSide = () => {
                   size={20}
                   style={{ marginBottom: 5, marginRight: 5 }}
                 />
-                Add Member
+                Add Product
               </Button>
-              <Button variant="success border">Message</Button>
-              <Button variant="success border">Settings</Button>
+              <Button variant="success border">Product List</Button>
             </Stack>
           </Row>
         </Col>
-        <Col md={9}></Col>
+        <Col md={9}>
+          {(() => {
+            switch (activeComponent) {
+              case "addProduct":
+                return <div>hello</div>;
+              case "productList":
+                return <div>product list</div>;
+              default:
+                return null;
+                break;
+            }
+          })()}
+        </Col>
       </Row>
     </div>
   );
