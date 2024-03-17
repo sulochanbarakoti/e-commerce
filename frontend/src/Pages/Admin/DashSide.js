@@ -4,7 +4,7 @@ import { IoIosAddCircle } from "react-icons/io";
 
 const DashSide = () => {
   return (
-    <>
+    <div>
       <Row className="mb-3">
         <Col md={3} className="bg-success rounded" style={{ height: "100vh" }}>
           <Row className="p-3 fs-4 fw-bold text-white">
@@ -24,7 +24,7 @@ const DashSide = () => {
         </Col>
         <Col md={9}></Col>
       </Row>
-    </>
+    </div>
   );
 };
 
