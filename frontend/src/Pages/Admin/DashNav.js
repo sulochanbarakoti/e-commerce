@@ -9,7 +9,7 @@ const DashNav = () => {
       id="navbar"
       collapseOnSelect
       expand="lg"
-      className="shadow bg-body-tertiary"
+      className="shadow bg-body-tertiary mb-3"
     >
       <Navbar.Brand href="/">
         <Row>
