@@ -17,6 +17,25 @@ const AddProduct = () => {
               </Form.Label>
               <Form.Control type="text" placeholder="Enter product name" />
             </Form.Group>
+            <Form.Group>
+              <Col>
+                {" "}
+                <Col>
+                  {" "}
+                  <Form.Label>
+                    <div className="fw-bold">Price:</div>
+                  </Form.Label>
+                  <Form.Control type="text" placeholder="Enter price" />
+                </Col>
+                <Col>
+                  {" "}
+                  <Form.Label>
+                    <div className="fw-bold">New Price:</div>
+                  </Form.Label>
+                  <Form.Control type="text" placeholder="Enter new price" />
+                </Col>
+              </Col>
+            </Form.Group>
           </Form>
         </Row>
       </Row>
