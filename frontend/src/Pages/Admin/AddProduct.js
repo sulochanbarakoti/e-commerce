@@ -17,10 +17,14 @@ const AddProduct = () => {
   };
 
   const onFileChange = (e) => {
-    const { value } = e.target.file[0];
-    console.log(value);
+    productDetail.image = e.target.files[0];
   };
-  console.log(productDetail);
+
+  const handleSubmit = () => {
+    productDetail.category = selectedCategory;
+    console.log(productDetail);
+  };
+
   return (
     <Container>
       <Row className="border border-3 rounded w-auto">
@@ -98,16 +102,15 @@ const AddProduct = () => {
             </Form.Group>
             <Form.Group>
               <Form.Label className="fw-bold">Product Image:</Form.Label>
-              <Form.Control
-                type="file"
-                accept=".jpg,.png"
-                onChange={onFileChange}
-                required
-              />
+              <Form.Control type="file" onChange={onFileChange} required />
             </Form.Group>
             <Form.Group className="py-3">
               {" "}
-              <Button variant="outline-success" className="fw-bold">
+              <Button
+                variant="outline-success"
+                className="fw-bold"
+                onClick={handleSubmit}
+              >
                 Save
               </Button>
             </Form.Group>
