@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Form, Row, Dropdown, Button } from "react-bootstrap";
 
 const AddProduct = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [productDetail, setProductDetail] = useState({
+    name: "",
+    old_price: Number,
+    new_price: Number,
+    category: null,
+    image: null,
+  });
+
+  const handleClick = (e) => {
+    const { name, value } = e.target;
+    setProductDetail((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onFileChange = (e) => {
+    const { value } = e.target.file[0];
+    console.log(value);
+  };
+  console.log(productDetail);
   return (
     <Container>
       <Row className="border border-3 rounded w-auto">
@@ -15,43 +34,76 @@ const AddProduct = () => {
               <Form.Label>
                 <div className="fw-bold">Product Name:</div>
               </Form.Label>
-              <Form.Control type="text" placeholder="Enter product name" />
+              <Form.Control
+                type="text"
+                placeholder="Enter product name"
+                onChange={handleClick}
+                name="name"
+              />
             </Form.Group>
             <Form.Group>
               <Col>
                 <Form.Label>
                   <div className="fw-bold">Price:</div>
                 </Form.Label>
-                <Form.Control type="text" placeholder="Enter price" />
+                <Form.Control
+                  type="number"
+                  placeholder="Enter price"
+                  onChange={handleClick}
+                  name="old_price"
+                />
               </Col>
               <Col>
                 <Form.Label>
                   <div className="fw-bold">New Price:</div>
                 </Form.Label>
-                <Form.Control type="text" placeholder="Enter new price" />
+                <Form.Control
+                  type="number"
+                  placeholder="Enter new price"
+                  onChange={handleClick}
+                  name="new_price"
+                />
               </Col>
             </Form.Group>
             <Form.Group>
-              <Form.Label className="fw-bold">Select Category:</Form.Label>
+              <Form.Label className="fw-bold">Category:</Form.Label>
               <Dropdown>
-                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                  Dropdown Button
+                <Dropdown.Toggle variant="success">
+                  {selectedCategory || "Select Category"}
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">
-                    Another action
+                  <Dropdown.Item
+                    onClick={() => {
+                      setSelectedCategory("Womens");
+                    }}
+                  >
+                    Women
                   </Dropdown.Item>
-                  <Dropdown.Item href="#/action-3">
-                    Something else
+                  <Dropdown.Item
+                    onClick={() => {
+                      setSelectedCategory("Mens");
+                    }}
+                  >
+                    Men
+                  </Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={() => {
+                      setSelectedCategory("Kids");
+                    }}
+                  >
+                    Kids
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </Form.Group>
             <Form.Group>
               <Form.Label className="fw-bold">Product Image:</Form.Label>
-              <Form.Control type="file" accept=".jpg,.png" />
+              <Form.Control
+                type="file"
+                accept=".jpg,.png"
+                onChange={onFileChange}
+                required
+              />
             </Form.Group>
             <Form.Group className="py-3">
               {" "}
