@@ -28,7 +28,7 @@ const AddProduct = () => {
       const response = await axios.post(
         "http://localhost:3001/api/v1/product/add",
         productDetail,
-        { headers: { enctype: "multipart/form-data" } }
+        { headers: { "Content-Type": "multipart/form-data" } }
       );
       console.log(response);
     } catch (error) {

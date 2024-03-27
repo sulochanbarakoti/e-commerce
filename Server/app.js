@@ -6,7 +6,7 @@ const route = require("./router/route");
 const path = require("path");
 
 const app = express();
-app.use("/service", express.static(path.join(__dirname, "service")));
+app.use("service", express.static(path.join(__dirname, "service")));
 // middleware
 app.use(cors());
 app.use(express.json()); // parse request body as JSON
