@@ -5,8 +5,9 @@ const {
   addProduct,
   getAllProducts,
 } = require("../controller/productController");
+const upload = require("../service/multerConfig");
 
-router.route("/product/add").post(addProduct);
+router.route("/product/add", upload.single("image")).post(addProduct);
 router.route("/product/all").get(getAllProducts);
 
 module.exports = router;

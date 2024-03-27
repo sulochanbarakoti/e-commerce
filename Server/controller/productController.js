@@ -1,23 +1,26 @@
+const productModule = require("../module/productModule");
 const ProductModule = require("../module/productModule");
 
 const addProduct = async (req, res) => {
-  const newProduct = new ProductModule({
-    id: req.body.id,
-    name: req.body.name,
-    image: req.body.image,
-    category: req.body.category,
-    new_price: req.body.new_price,
-    old_price: req.body.old_price,
-  });
-  console.log(req.body.name);
-  try {
-    const savedProduct = await ProductModule.create(newProduct);
-    return res
-      .status(201)
-      .json({ msg: "Product added successfully", data: savedProduct });
-  } catch (error) {
-    res.status(400).send(error);
-  }
+  console.log(req.body, req.file);
+  // let products = productModule.find();
+  // const newProduct = new ProductModule({
+  //   id: (await products).length + 1,
+  //   name: req.body.name,
+  //   image: req.file ? req.file.path : "undefined",
+  //   category: req.body.category,
+  //   new_price: req.body.new_price,
+  //   old_price: req.body.old_price,
+  // });
+  // console.log(newProduct);
+  // try {
+  //   const savedProduct = await ProductModule.create(newProduct);
+  //   res
+  //     .status(201)
+  //     .json({ msg: "Product added successfully", data: savedProduct });
+  // } catch (error) {
+  //   res.status(400).send(error);
+  // }
 };
 
 const getAllProducts = async (req, res) => {
