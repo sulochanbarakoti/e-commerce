@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Col, Container, Form, Row, Dropdown, Button } from "react-bootstrap";
 
 const AddProduct = () => {
@@ -20,9 +21,21 @@ const AddProduct = () => {
     productDetail.image = e.target.files[0];
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     productDetail.category = selectedCategory;
     console.log(productDetail);
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/v1/product/add",
+        productDetail,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
